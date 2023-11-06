@@ -4,39 +4,41 @@
   переключая тему
 */
 
-@media (prefers-color-scheme: light) {
-:root {
-      /* Дублируем переменные светлой темы */
-      --accent-color: #353430;
-      --decor-bg-color: #FF8DCB;
-      --decor-color: #353430;
-      --shadow-color: var(--decor-bg-color);
-      --bg-color: #FFF1F7;
-      --title-color: #FF8DCB;
-      --text-color: #353430;
-      --bg-image: url(../images/cover-image-light.png);     
-  }
-}
-
-
-
-/* Остальные стили */ 
+/* Остальные стили */
 
 .page.theme_light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --bg-image: url(../images/cover-image-light.png);
   --accent-color: #353430;
-  --decor-bg-color: #FF8DCB;
-  --decor-color: #353430;
   --shadow-color: var(--decor-bg-color);
-  --bg-color: #FFF1F7;
-  --title-color: #FF8DCB;
   --text-color: #353430;
-  --bg-image: url(../images/cover-image-light.png); 
+  --link-border-hover: rgba(50, 49, 45, 0.4);
+  --decor-bg-color: #ff8dcb;
+  --bg-color: #fff1f7;
+  --decor-text-color: var(--text-color);
 }
 
 .theme_light .header__decor {
   display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Дублируем переменные светлой темы */
+    --bg-image: url(../images/cover-image-light.png);
+    --accent-color: #353430;
+    --shadow-color: var(--decor-bg-color);
+    --text-color: #353430;
+    --link-border-hover: rgba(50, 49, 45, 0.4);
+    --decor-bg-color: #ff8dcb;
+    --bg-color: #fff1f7;
+    --decor-text-color: var(--text-color);
+  }
+
+  .header__decor {
+    display: none;
+  }
 }
