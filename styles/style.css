@@ -7,7 +7,7 @@
 
 .header {
   display: grid;
-  grid-template-rows: auto auto min-content auto;
+  grid-template-rows: 1fr min-content 1fr;
   margin: 10px;
   block-size: calc(100vh - 20px);
 }
@@ -15,7 +15,6 @@
 @media screen and (width >= 768px) {
   .header {
     margin: 20px;
-
     block-size: calc(100vh - 40px);
   }
 }
@@ -78,20 +77,14 @@
 .header__theme-menu {
   justify-self: end;
   align-self: center;
-  margin-block: 65px;
-}
-
-@media screen and (width >= 768px) {
-  .header__theme-menu {
-    margin-block: 173px;
-  }
+  margin-block: auto;
 }
 
 @media screen and (width >= 1024px) {
   .header__theme-menu {
     justify-self: center;
     align-self: start;
-    margin-block: 0 273px;
+    margin-block: 0;
   }
 }
 
@@ -124,6 +117,7 @@
 
 .header__theme-menu-button:hover {
   border: 1px solid var(--link-border-hover);
+  cursor: pointer;
 }
 
 .header__theme-menu-button:focus {
@@ -136,10 +130,7 @@
 
 .header__theme-menu-button_active {
   border: 1px solid var(--accent-color);
-}
-
-.header__title {
-  /* align-self: center; */
+  pointer-events: none;
 }
 
 @media screen and (width >= 768px) {
@@ -168,19 +159,13 @@
 .header__text {
   justify-self: end;
   align-items: center;
-  margin-block: 55px;
   max-inline-size: 364px;
-}
-
-@media screen and (width >= 768px) {
-  .header__text {
-    margin-block: 162px;
-  }
+  block-size: min-content;
+  margin-block: auto;
 }
 
 @media screen and (width >= 1024px) {
   .header__text {
-    margin-block: 114px;
     max-inline-size: 491px;
   }
 }
@@ -228,6 +213,10 @@
   line-height: 23.4px; /* 130% */
 }
 
+.main__section__title_4 {
+  font-weight: 400;
+}
+
 .main__section__article {
   grid-area: article;
 }
@@ -240,12 +229,6 @@
   font-size: 18px;
   font-style: normal;
   line-height: 23.4px; /* 130% */
-}
-
-@media screen and (width >= 768px) {
-  .main__section__text {
-    word-spacing: -2px;
-  }
 }
 
 .main__section__text:last-child {
@@ -443,7 +426,7 @@
   }
 }
 
-@media screen and (width >= 1024px) {
+@media screen and (width > 768px) {
   .footer__title {
     padding-block: 299px;
   }

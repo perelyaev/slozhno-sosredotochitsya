@@ -55,4 +55,14 @@
   .theme_auto .header__decor {
     display: none;
   }
+
+  @media screen and (width >= 1024px) {
+    .title {
+      text-shadow: 4px 4px 0 #FF0070;
+    }
+  
+    .footer .title {
+      text-shadow: 2px 2px 0 #FF0070;
+    }
+  }
 }
