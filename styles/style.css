@@ -7,14 +7,16 @@
 
 .header {
   display: grid;
+  grid-template-rows: auto auto min-content auto;
   margin: 10px;
-  max-block-size: calc(100vh - 20px);
+  block-size: calc(100vh - 20px);
 }
 
 @media screen and (width >= 768px) {
   .header {
     margin: 20px;
-    max-block-size: calc(100vh - 40px);
+
+    block-size: calc(100vh - 40px);
   }
 }
 
@@ -65,17 +67,17 @@
   content: '';
   align-self: center;
   margin-inline-end: 9px;
-  fill: var(--accent-color);
-  background-image: url(../images/Ellipse\ 4.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: drop-shadow(0 0 4px var(--accent-color));
+  background-color: var(--accent-color);
+  border-radius: 50%;
   block-size: 9px;
   inline-size: 9px;
+  box-shadow: 0 0 4px 2px var(--accent-color);
 }
+
 
 .header__theme-menu {
   justify-self: end;
+  align-self: center;
   margin-block: 65px;
 }
 
@@ -88,6 +90,7 @@
 @media screen and (width >= 1024px) {
   .header__theme-menu {
     justify-self: center;
+    align-self: start;
     margin-block: 0 273px;
   }
 }
@@ -135,6 +138,10 @@
   border: 1px solid var(--accent-color);
 }
 
+.header__title {
+  /* align-self: center; */
+}
+
 @media screen and (width >= 768px) {
   .header__title {
     position: relative;
@@ -143,13 +150,13 @@
 }
 
 .title {
-  color: #db00ff;
+  color: var(--title-color);
   font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-style: normal;
   line-height: 82.5%; /* 95.7px */
-  text-shadow: 4px 4px 0 #ff0070;
+  text-shadow: 4px 4px 0 var(--shadow-color);
 }
 
 @media screen and (width > 375px) {
@@ -160,6 +167,7 @@
 
 .header__text {
   justify-self: end;
+  align-items: center;
   margin-block: 55px;
   max-inline-size: 364px;
 }
@@ -406,6 +414,8 @@
 }
 
 .footer {
+  display: grid;
+  align-items: center;
   margin: 10px;
   block-size: calc(100vh - 20px);
 }
@@ -421,6 +431,10 @@
   display: block;
   padding-block: 275px;
   text-align: center;
+}
+
+.footer .title {
+  text-shadow: 2px 2px 0 var(--shadow-color);
 }
 
 @media screen and (width >= 768px) {

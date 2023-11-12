@@ -19,7 +19,20 @@
   --decor-bg-color: #ff8dcb;
   --bg-color: #fff1f7;
   --decor-text-color: var(--text-color);
+  --title-color: #FFC2E6;
 }
+
+@media screen and (width >= 1024px) {
+  .title {
+    text-shadow: 4px 4px 0 #FF0070;
+  }
+
+  .footer .title {
+    text-shadow: 2px 2px 0 #FF0070;
+  }
+}
+
+
 
 .theme_light .header__decor {
   display: none;
@@ -36,9 +49,10 @@
     --decor-bg-color: #ff8dcb;
     --bg-color: #fff1f7;
     --decor-text-color: var(--text-color);
+    --title-color: #FFC2E6;
   }
 
-  .header__decor {
+  .theme_auto .header__decor {
     display: none;
   }
 }
